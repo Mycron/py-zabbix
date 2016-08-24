@@ -220,7 +220,7 @@ class ZabbixAPI(object):
             request_json['auth'] = self.auth
 
         logger.debug(
-            'urllib2.Request({0}, {1})'.format(
+            'urllib2.request({0}, {1})'.format(
                 self.url,
                 json.dumps(request_json)))
 
@@ -228,7 +228,7 @@ class ZabbixAPI(object):
         if not isinstance(data, bytes):
             data = data.encode("utf-8")
 
-        req = urllib2.Request(self.url, data)
+        req = urllib2.request(self.url, data)
         req.get_method = lambda: 'POST'
         req.add_header('Content-Type', 'application/json-rpc')
 
