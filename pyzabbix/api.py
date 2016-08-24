@@ -24,7 +24,7 @@ import sys
 
 # For Python 2 and 3 compatibility
 try:
-    import urllib2
+    import urllib3 as urllib2
 except ImportError:
     # Since Python 3, urllib2.Request and urlopen were moved to
     # the urllib.request.
